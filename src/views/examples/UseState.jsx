@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PageTitle from "../../components/layout/PageTitle";
 import SectionTitle from "../../components/layout/SectionTitle";
 
 const UseState = (props) => {
+  //useState
+
   const [count, setCount] = useState(0);
   const [name, setName] = useState(" ");
+  
+  //useEffect
+
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  }, 
+  [count]
+  );
 
   return (
     <div className="UseState">
